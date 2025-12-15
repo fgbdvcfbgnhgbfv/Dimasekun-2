@@ -1,0 +1,15 @@
+Roblox Open Code License (ROCL) v1.0
+
+Copyright (c) 2025 LOPKL2011
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this Roblox game code (the "Code"), to use, copy, modify, and distribute it for their Roblox games, under the following conditions:
+
+Attribution – You must give proper credit to the original author, LOPKL2011, in a visible location within your game or game description.
+
+Revenue Sharing – You agree to pay 15% of any gross revenue generated from any game that uses this Code to the original author. Payments should be made via a method agreed with the author (e.g., Roblox DevEx).
+
+Non-exclusive – The original author retains all rights to the Code and may license it to others.
+
+No Warranty – The Code is provided “as is,” without warranty of any kind. The author is not liable for any damages arising from its use.
+
+By using this Code, you agree to comply with the above terms.
