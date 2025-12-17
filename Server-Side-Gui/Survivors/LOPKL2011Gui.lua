@@ -1,0 +1,158 @@
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Workspace = game:GetService("Workspace")
+local slowwalkevent = game.ReplicatedStorage.Events.Slowwalkevent
+local event = ReplicatedStorage.Events.Survivors.SurvivorsRemovEvent
+local RunControlEvent = ReplicatedStorage.Events.RunControlEvent
+local survivorsFolder = Workspace:WaitForChild("Players"):WaitForChild("Survivors")
+local survivorsFolder = workspace:WaitForChild("Players"):WaitForChild("Survivors")
+local killersFolder = workspace:WaitForChild("Players"):WaitForChild("Killer")
+local neutralFolder = workspace:WaitForChild("Players"):WaitForChild("Neutral")
+local solomusic = game.ReplicatedStorage.Events.SoloMusic
+
+event.OnServerEvent:Connect(function(player, action)
+	local character = player.Character
+	if not character then return end
+
+	local hrp = character:FindFirstChild("HumanoidRootPart")
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+	if not hrp or not humanoid then return end
+
+	if action == "Stenka_LOPKL2011" then
+		local stenka = game.ReplicatedStorage.SurvivorsParts.LOPKL2011.Stenka:Clone()
+		local playerCFrame = hrp.CFrame
+		local lookDirection = playerCFrame.LookVector
+		local offsetDistance = 5  
+		local spawnPosition = playerCFrame.Position + (lookDirection * offsetDistance)
+		stenka:SetPrimaryPartCFrame(CFrame.new(spawnPosition, spawnPosition + lookDirection))
+		stenka.Parent = Workspace
+		stenka.MAIN.Touched:Connect(function(part)
+			local targetChar = part:FindFirstAncestorOfClass("Model")
+			if not targetChar then return end
+
+			local targetPlayer = Players:GetPlayerFromCharacter(targetChar)
+			if not targetPlayer then return end
+
+			local playerGui = targetPlayer:WaitForChild("PlayerGui")
+			if targetChar:IsDescendantOf(killersFolder) then
+				local screenGui = Instance.new("ScreenGui")
+				screenGui.Name = "LOPKL2011SCARYGui"
+				screenGui.ResetOnSpawn = false
+				screenGui.IgnoreGuiInset = true
+				screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+				screenGui.Parent = playerGui
+
+				local background = Instance.new("ImageLabel")
+				background.Size = UDim2.new(1, 0, 1, 0)
+				background.Position = UDim2.new(0, 0, 0, 0)
+				background.Image = "rbxassetid://125724583475597"
+				background.BackgroundTransparency = 1
+				background.Parent = screenGui
+				solomusic:FireClient(targetPlayer,"Lobotomia")
+				stenka:Destroy()
+				task.delay(4,function()
+					screenGui:Destroy()
+				end)
+			end
+			if targetChar:IsDescendantOf(neutralFolder) then
+				local screenGui = Instance.new("ScreenGui")
+				screenGui.Name = "LOPKL2011SCARYGui"
+				screenGui.ResetOnSpawn = false
+				screenGui.IgnoreGuiInset = true
+				screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+				screenGui.Parent = playerGui
+
+				local background = Instance.new("ImageLabel")
+				background.Size = UDim2.new(1, 0, 1, 0)
+				background.Position = UDim2.new(0, 0, 0, 0)
+				background.Image = "rbxassetid://125724583475597"
+				background.BackgroundTransparency = 1
+				background.Parent = screenGui
+				solomusic:FireClient(targetPlayer,"Lobotomia")
+				stenka:Destroy()
+				task.delay(4,function()
+					screenGui:Destroy()
+				end)
+			end
+		end)
+		task.delay(8, function()
+			if stenka and stenka.Parent then
+				stenka:Destroy()
+			end
+		end)
+	elseif action == "Gromkogovoritel_LOPKL2011" then
+		-- ???????? ???? ????????, ????? ???????? ??????
+		local allSurvivors = {}
+		for _, survivor in pairs(survivorsFolder:GetChildren()) do
+			if survivor ~= character then
+				table.insert(allSurvivors, survivor)
+			end
+		end
+
+		if #allSurvivors == 0 then return end -- ???? ??? ?????? ????????
+
+		-- ???????? ?????????? ?????????
+		local randomSurvivor = allSurvivors[math.random(1, #allSurvivors)]
+		local targetHrp = randomSurvivor:FindFirstChild("HumanoidRootPart")
+		local targetHumanoid = randomSurvivor:FindFirstChildOfClass("Humanoid")
+
+		if not targetHrp or not targetHumanoid then return end
+
+		-- ?????????? ??????? ????? ???????
+		local playerPosition = hrp.CFrame
+		local targetPosition = targetHrp.CFrame
+
+		-- ?????? ??????? ??????? ???????
+		hrp.CFrame = targetPosition
+		targetHrp.CFrame = playerPosition
+
+		-- ???????? ???????? ???????
+		local playerHealth = humanoid.Health
+		local targetHealth = targetHumanoid.Health
+
+		-- ???????? 15 HP ? ???????? ?????? (??????? 0)
+		humanoid.Health = math.max(0, playerHealth - 15)
+
+		-- ????????? 15 HP ??????? ?????? (???????? MaxHealth)
+		local newTargetHealth = targetHealth + 15
+		if newTargetHealth > targetHumanoid.MaxHealth then
+			newTargetHealth = targetHumanoid.MaxHealth
+		end
+		targetHumanoid.Health = newTargetHealth
+
+		-- ???????? ??????-????
+		local targetPlayer = Players:GetPlayerFromCharacter(randomSurvivor)
+
+		-- ????????? ??????? ??? ????? ???????
+		-- ??? ???????? ?????? (?????? ????????)
+		if playerHealth > 15 then -- ???? ? ?????? ???? ?????? 15 HP
+			-- ?????????? ?????? ?????? ????????
+			local damageEffect = Instance.new("Sound")
+			damageEffect.SoundId = "rbxassetid://138186576" -- ???? ???????????
+			damageEffect.Volume = 0.5
+			damageEffect.Parent = hrp
+			damageEffect:Play()
+			game:GetService("Debris"):AddItem(damageEffect, 2)
+		end
+
+		-- ??? ???????? ?????? (???????? ????????)
+		if targetPlayer then
+			-- ?????????? ?????? ????????? ????????
+			local healEffect = Instance.new("Sound")
+			healEffect.SoundId = "rbxassetid://911847055" -- ???? ???????
+			healEffect.Volume = 0.5
+			healEffect.Parent = targetHrp
+			healEffect:Play()
+			game:GetService("Debris"):AddItem(healEffect, 2)
+		end
+
+		-- ????????????? ???????? ?? ????????????? ??????????? (2 ???????)
+		-- ????? ???????? cooldown ????? ?????????? ??? ?????? ????????
+
+		-- ??????????? ??? ???????
+		print(player.Name .. " ??????????? ???????? ? ??????? 15 HP")
+		if targetPlayer then
+			print(targetPlayer.Name .. " ??????? 15 HP")
+		end
+	end
+end)
