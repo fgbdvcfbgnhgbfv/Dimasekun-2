@@ -1,105 +1,118 @@
+# Dimasekun-2 - Roblox Game Project
+
 ![Dimasekun Game Screenshot](https://raw.githubusercontent.com/fgbdvcfbgnhgbfv/DImasekun-2/main/Dimasekun.jpg)
 
-Dimasekun-2 - Roblox Game Project
-A multiplayer Roblox game set in the surreal, chaotic universe of Aboba, where former friends and enemies are dragged into Dimasekun - a world of endless games, twisted powers, and personal vendettas.
+Dimasekun-2 is a multiplayer Roblox game set in the surreal, chaotic universe of Aboba, where former friends and enemies are pulled into Dimasekun — a world of endless games, twisted powers, and personal vendettas.
 
-Lore & Universe
-The game is based on the Aboba Universe, a sprawling narrative of fictional nations, ideologies, and characters created by a group of friends. Key factions include:
+---
 
-Aboba - A once-unified alliance now fragmented into multiple states.
+## Lore & Universe
 
-Polina Reich - A totalitarian regime led by Polina.
+The game is based on the **Aboba Universe**, a sprawling narrative of fictional nations, ideologies, and characters created by a group of friends. Key factions include:
 
-Serega’s Territories - The remnants of Aboba in exile.
-
-Various splinter states led by Danya, Sasha, Denis, Dima, and others.
+- **Aboba** — a once-unified alliance now fragmented into multiple states.
+- **Polina Reich** — a totalitarian regime led by Polina.
+- **Serega’s Territories** — remnants of Aboba in exile.
+- Various splinter states led by Danya, Sasha, Denis, Dima, and others.
 
 Players take on the roles of characters from this universe, each with unique abilities, backstories, and alignments (Survivor, Killer, or Neutral).
 
-Gameplay Overview
-Dimasekun is a round-based survival game with the following structure:
+---
 
-Rounds last 5 minutes (2 minutes if only one player remains).
+## Gameplay Overview
 
-Each round includes:
+Dimasekun is a round-based survival game:
 
-1 Killer
+- **Round Duration:** 5 minutes (2 minutes if only one player remains)
+- Each round includes:
+  - 1 Killer
+  - 1 Neutral (if more than 2 Survivors)
+  - Multiple Survivors
+- Survivors and Neutrals can perform a **dash** (costs 15 stamina)
+- Killers have unique abilities and higher HP
 
-1 Neutral (if there are more than 2 Survivors)
+---
 
-Multiple Survivors
+## Progression System
 
-Survivors and Neutrals can perform a dash (costs 15 stamina).
+Players earn **boxes** and **tokens** by winning rounds:
 
-Killers have unique abilities and higher health pools.
+- **Box Types:**
+  - Killer Box
+  - Survivor Box
+  - Neutral Box
+- **Rarities:** Common, Rare, Epic, Mythical, Legendary
+- Tokens can be used to purchase boxes in the in-game shop
 
-Progression System
-Earn boxes and tokens by winning rounds.
+---
 
-Box types:
+## Characters
 
-Killer Box
-
-Survivor Box
-
-Neutral Box
-
-Rarities: Common, Rare, Epic, Mythical, Legendary
-
-Tokens can be used to purchase boxes in the shop.
-
-Characters
 Each character has:
 
-A unique backstory tying them to the Aboba lore.
+- A unique backstory tied to the Aboba lore
+- Stats: HP, walk speed, run speed, stamina
+- Abilities: 3–5 special skills with cooldowns
 
-Stats: HP, walk speed, run speed, stamina.
+**Example Characters:**
 
-Abilities: 3–5 special skills with cooldowns.
+| Name             | Role     | Rarity      | Key Ability                                   |
+|-----------------|----------|------------|-----------------------------------------------|
+| Svyatik          | Killer   | Starter    | Pink Infection — spawns slowing blocks       |
+| Dima Mobila      | Killer   | Legendary  | Dima's Flight — flies and throws eggs        |
+| Pig (Cyber)      | Killer   | Epic       | Mechanical Eyes — reveals all survivors      |
+| Sasha Travoedov  | Survivor | Epic       | Grass Sapling — places healing plants        |
+| Denis            | Neutral  | Epic       | Redefinition — alters object properties      |
+| Serega (Pig)     | Survivor | Super Rare | Invisibility Cloak — stealth mode            |
 
-Example Characters:
-Name	Role	Rarity	Key Ability
-Svyatik	Killer	Starter	Pink Infection - spawns slowing blocks
-Dima Mobila	Killer	Legendary	Dima's Flight - flies and throws eggs
-Pig (Cyber)	Killer	Epic	Mechanical Eyes - reveals all survivors
-Sasha Travoedov	Survivor	Epic	Grass Sapling - places healing plants
-Denis	Neutral	Epic	Redefinition - alters object properties
-Serega (Pig)	Survivor	Super Rare	Invisibility Cloak - stealth mode
-(Full list with stats and lore is available in the game’s lore menu.)
+Full list with stats and lore is available in the in-game lore menu.
 
-Installation & Usage
-This repository contains the source scripts for the Roblox game *Dimasekun-2*.
+---
 
-Prerequisites
-Roblox Studio
+## Installation & Usage
 
-Basic knowledge of Lua and Roblox scripting
+1. **Prerequisites**
+   - Roblox Studio
+   - Basic knowledge of Lua and Roblox scripting
 
-Setup
-Clone the repository.
+2. **Setup**
+   - Clone the repository
+   - Open the `.rbxl` place file in Roblox Studio
+   - Insert the provided scripts into the appropriate containers (ServerScriptService, StarterPack)
+   - Adjust settings (round time, spawn points, UI)
+   - Publish to Roblox
 
-Open the .rbxl place file in Roblox Studio.
+---
 
-Insert the provided scripts into the appropriate containers (e.g., ServerScriptService, StarterPack).
+## License
 
-Adjust settings (round time, spawn points, UI) as needed.
+This project is licensed under the **Roblox Open Code License (ROCL) v2.2**.
 
-Publish to Roblox.
+**Copyright (c) 2025 LOPKL2011**
 
-License
-This project is licensed under the MIT License.
-See LICENSE for details.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this Roblox game code (the "Code"), to use, copy, modify, and distribute the Code for use in Roblox games, subject to the following conditions:
 
-Roblox-Specific Terms
-If used in a Roblox game, additional terms apply (see ROBLOX_LICENSE.txt), including:
+1. **Attribution**  
+   You must give clear and visible credit to the original author: **LOPKL2011**. Attribution must be placed in the game description, credits section, or another easily accessible location.
 
-Attribution to LOPKL2011
+2. **Copyleft / Open Derivatives**  
+   Any modified version of the Code, or any Roblox game that includes or is based on the Code, must make the modified source code publicly available. The modified code must be licensed under this same license (ROCL) and remain free to access.
 
-15% revenue sharing from games using this code
+3. **Redistribution**  
+   Modified or unmodified versions of the Code may be redistributed, provided that this license and the attribution requirement are preserved.
 
-By using this code in a Roblox project, you agree to these terms.
+4. **Non-Exclusivity**  
+   This license is non-exclusive. The original author retains all rights to the Code and may license it under different terms to other parties.
 
-Author
-LOPKL2011 - Creator of the Aboba universe and the Dimasekun game.
+5. **No Warranty**  
+   The Code is provided "AS IS", without warranty of any kind, express or implied, including but not limited to fitness for a particular purpose. The author shall not be held liable for any damages arising from the use, misuse, or inability to use the Code.
 
-Note: This project is a fan-made adaptation of a collaborative fictional universe. All lore and characters are derived from original creative writing by the author and their community.
+By using, copying, modifying, or distributing the Code, you agree to comply with the terms of this license.
+
+---
+
+## Author
+
+**LOPKL2011** — creator of the Aboba universe and the Dimasekun game.
+
+> Note: This project is a fan-made adaptation of a collaborative fictional universe. All lore and characters are derived from original creative writing by the author and their community.
