@@ -1,5 +1,4 @@
-Roblox Open Code License (ROCL) v2.2
-
+Roblox Open Code License (ROCL) v2.4
 Copyright (c) 2025 LOPKL2011
 
 Permission is hereby granted, free of charge, to any person obtaining
@@ -9,26 +8,50 @@ following conditions:
 
 1. Attribution
    You must give clear and visible credit to the original author,
-   LOPKL2011. Attribution must be placed in the game description,
-   credits section, or another easily accessible location.
+   LOPKL2011. Attribution must appear in the game description, a
+   credits section, or a dedicated credits screen within the game.
+   It must be presented in a font size no smaller than the surrounding
+   text, visible without requiring any special action from the user,
+   and must not be buried within a list of more than twenty (20) other
+   entries unless each entry is individually prominent.
 
 2. Copyleft / Open Derivatives
-   Any modified version of the Code, or any Roblox game that includes
-   or is based on the Code, must make the modified source code
-   publicly available. The modified code must be licensed under
-   this same license (ROCL) and remain free to access.
+   Any modified version of the Code, or any Roblox game that directly
+   incorporates ten (10) or more lines of the Code, must make the
+   complete modified source code publicly available for as long as the
+   game remains accessible to players. The source must be:
+     (a) hosted on a publicly reachable platform (such as GitHub,
+         Pastebin, or a Roblox model);
+     (b) linked directly and prominently in the game description;
+     (c) updated within fourteen (14) days of any material change.
+   The modified code must be licensed under this same license
+   (ROCL v2.4) and remain freely accessible to all.
 
 3. Redistribution
    Modified or unmodified versions of the Code may be redistributed,
-   provided that this license and the attribution requirement are
-   preserved.
+   provided that this license text and the attribution requirement are
+   preserved in full, without alteration.
 
 4. Non-Exclusivity
-   This license is non-exclusive. The original author retains all
-   rights to the Code and may license it under different terms to
-   other parties.
+   This license is non-exclusive. The original author (LOPKL2011)
+   retains all rights to the Code and may license it to other parties
+   under different terms. This exception applies solely to the original
+   author and does not extend to any other contributors or recipients
+   of the Code. Recipients of the Code are hereby notified of this
+   asymmetry.
 
-5. No Warranty
+5. License Termination and Cure Period
+   Any violation of the terms of this license suspends your rights
+   under this license immediately and automatically. However, if you
+   receive written notice of the violation (by email, public issue
+   tracker, or other verifiable means), you have thirty (30) calendar
+   days from the date of that notice to cure the violation. If the
+   violation is fully cured within that period, your rights are
+   automatically reinstated. If the violation is not cured within
+   thirty (30) days, your rights terminate permanently and you must
+   cease all use and distribution of the Code.
+
+6. No Warranty
    The Code is provided "AS IS", without warranty of any kind,
    express or implied, including but not limited to fitness for a
    particular purpose. The author shall not be held liable for any
